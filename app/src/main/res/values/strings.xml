@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Authenticator</string>
+    <string name="app_version_name">Authenticator 1.0-restricted</string>
+    <string name="settings">Settings</string>
+    <string name="settings_about_header">About Authenticator</string>
+    <string name="settings_version_name">Version</string>
+
+</resources>
