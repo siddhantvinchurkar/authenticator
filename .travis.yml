@@ -18,9 +18,9 @@ android:
   - android-29
   - extra
 before_install:
+- chmod -R 777 ${HOME}
 - openssl aes-256-cbc -K $encrypted_3d4ec2806c82_key -iv $encrypted_3d4ec2806c82_iv
   -in volatile_keystore.jks.enc -out volatile_keystore.jks -d
-- chmod -R 777 ${HOME}
 script:
 - "./gradlew clean build check"
 before_deploy:
