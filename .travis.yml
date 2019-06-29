@@ -18,9 +18,11 @@ android:
   - android-29
   - extra
 before_install:
+- openssl aes-256-cbc -K $encrypted_3d4ec2806c82_key -iv $encrypted_3d4ec2806c82_iv
+  -in volatile_keystore.jks.enc -out volatile_keystore.jks -d
 - chmod -R 777 ${HOME}
 script:
-- ./gradlew clean build check
+- "./gradlew clean build check"
 before_deploy:
 - cp volatile_keystore.jks app/build/outputs/apk/release/volatile_keystore.jks
 - cd app/build/outputs/apk/release
@@ -37,6 +39,6 @@ deploy:
   on:
     repo: siddhantvinchurkar/authenticator
     tags: true
-  api_key: $gak
+  api_key: "$gak"
 after_deploy:
 - echo "App Successfully Deployed!"
